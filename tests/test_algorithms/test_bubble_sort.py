@@ -25,49 +25,41 @@ class TestBubbleSort:
         result = sorter.sort(reverse_sorted_data)
         assert result == sorted_data
     
-    def test_sort_empty_array(self):
+    def test_sort_empty_array(self, empty_array):
         """Test sorting an empty array"""
         sorter = BubbleSort()
-        result = sorter.sort([])
+        result = sorter.sort(empty_array)
         assert result == []
     
-    def test_sort_single_element(self):
+    def test_sort_single_element(self, single_element_array):
         """Test sorting a single element array"""
         sorter = BubbleSort()
-        result = sorter.sort([42])
+        result = sorter.sort(single_element_array)
         assert result == [42]
     
-    def test_sort_duplicates(self):
+    def test_sort_duplicates(self, data_with_duplicates_unsorted, data_with_duplicates_sorted):
         """Test sorting an array with duplicate values"""
         sorter = BubbleSort()
-        data = [5, 2, 8, 2, 9, 1, 5]
-        expected = [1, 2, 2, 5, 5, 8, 9]
-        result = sorter.sort(data)
-        assert result == expected
+        result = sorter.sort(data_with_duplicates_unsorted)
+        assert result == data_with_duplicates_sorted
     
-    def test_sort_negative_numbers(self):
+    def test_sort_negative_numbers(self, data_with_negative_numbers_unsorted, data_with_negative_numbers_sorted):
         """Test sorting an array with negative numbers"""
         sorter = BubbleSort()
-        data = [3, -1, 4, -5, 2, -3]
-        expected = [-5, -3, -1, 2, 3, 4]
-        result = sorter.sort(data)
-        assert result == expected
+        result = sorter.sort(data_with_negative_numbers_unsorted)
+        assert result == data_with_negative_numbers_sorted
     
-    def test_sort_floats(self):
+    def test_sort_floats(self, data_with_floats_unsorted, data_with_floats_sorted):
         """Test sorting an array of floats"""
         sorter = BubbleSort()
-        data = [3.14, 2.71, 1.41, 1.73]
-        expected = [1.41, 1.73, 2.71, 3.14]
-        result = sorter.sort(data)
-        assert result == expected
+        result = sorter.sort(data_with_floats_unsorted)
+        assert result == data_with_floats_sorted
     
-    def test_sort_strings(self):
+    def test_sort_strings(self, data_with_strings_unsorted, data_with_strings_sorted):
         """Test sorting an array of strings"""
         sorter = BubbleSort()
-        data = ["banana", "apple", "cherry", "date"]
-        expected = ["apple", "banana", "cherry", "date"]
-        result = sorter.sort(data)
-        assert result == expected
+        result = sorter.sort(data_with_strings_unsorted)
+        assert result == data_with_strings_sorted
     
     def test_original_array_unchanged(self, sample_data):
         """Test that original array is not modified"""
