@@ -1,8 +1,69 @@
-## Project Plan: Comparison System for Sorting Algorithms
+# Sorting Algorithm Comparisons
+
+A comprehensive system for comparing sorting algorithms with performance instrumentation, REST API, and interactive visualization.
+
+## Project Structure
+
+```
+sorting-algorithm-comparisons/
+├── src/                    # Source code
+│   ├── algorithms/        # Sorting algorithm implementations
+│   ├── api/              # FastAPI application
+│   ├── instrumentation/  # Performance measurement tools
+│   └── utils/            # Utility functions
+├── tests/                 # Test suite
+├── ui/                    # Frontend (coming soon)
+└── docs/                  # Documentation
+```
+
+## Setup
+
+1. Create a virtual environment:
+```bash
+python -m venv venv
+```
+
+2. Activate the virtual environment:
+- Windows: `venv\Scripts\activate`
+- Linux/Mac: `source venv/bin/activate`
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. For development, install dev dependencies:
+```bash
+pip install -r requirements-dev.txt
+```
+
+## Running the API
+
+```bash
+uvicorn src.api.main:app --reload
+```
+
+The API will be available at http://localhost:8000
+
+API documentation will be available at http://localhost:8000/docs
+
+## Running Tests
+
+```bash
+pytest
+```
+
+## Project Status
+
+🚧 This project is currently under development.
+
+---
+
+## Project Plan
 
 ### Phase 1: Core Infrastructure & API Foundation
 1. **Project Structure Setup**
-   - Create modular Python package structure
+   - ✅ Create modular Python package structure
    - Set up virtual environment and dependency management
    - Configure logging and configuration management
 
@@ -48,45 +109,3 @@
    - Algorithm efficiency graphs
    - Interactive sorting process visualization
    - Export capabilities for results
-
-### Phase 4: Advanced Features & Optimization
-9. **Enhanced Instrumentation**
-   - Detailed performance profiling
-   - Memory usage tracking
-   - CPU utilization monitoring
-   - Customizable measurement granularity
-
-10. **Advanced UI Features**
-    - Batch testing capabilities
-    - Historical performance tracking
-    - Algorithm recommendation system
-    - Custom data set upload
-
-### Phase 5: Documentation & Deployment
-11. **Documentation**
-    - API documentation (OpenAPI/Swagger)
-    - User guide for the web interface
-    - Developer documentation
-    - Performance analysis reports
-
-12. **Deployment & DevOps**
-    - Docker containerization
-    - CI/CD pipeline setup
-    - Production deployment configuration
-    - Monitoring and logging setup
-
-### Technical Stack Recommendations:
-- **Backend**: Python 3.9+, FastAPI, Pydantic
-- **Testing**: pytest, pytest-asyncio, httpx
-- **Frontend**: React.js or Vue.js with Chart.js/D3.js for visualization
-- **Database**: SQLite (for storing performance history)
-- **Deployment**: Docker, Docker Compose
-- **Monitoring**: Prometheus/Grafana (optional)
-
-### Key Features:
-- **Instrumentation**: Built-in performance measurement for all algorithms
-- **API-First Design**: Clean separation between algorithms and UI
-- **Comprehensive Testing**: Full test coverage for reliability
-- **Interactive UI**: User-friendly interface for algorithm comparison
-- **Real-time Visualization**: Live performance monitoring and comparison
-- **Extensible Architecture**: Easy to add new sorting algorithms
