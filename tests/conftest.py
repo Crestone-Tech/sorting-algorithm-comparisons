@@ -20,3 +20,12 @@ def reverse_sorted_data():
     """Provide reverse sorted data for testing"""
     return [90, 64, 34, 25, 22, 12, 11]
 
+@pytest.fixture
+def data_with_duplicates_unsorted():
+    """Provide unsorted data with duplicates for testing"""
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+@pytest.fixture
+def data_with_duplicates_sorted():
+    """Provide sorted data with duplicates for testing"""
+    return [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]
